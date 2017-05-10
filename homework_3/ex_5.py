@@ -26,6 +26,3 @@ while (t.xcor() < (w_width // 2) and
            t.ycor()
            print(f'{t.xcor()} | {t.ycor()}')
            
-
-
-
