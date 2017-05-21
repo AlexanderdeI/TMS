@@ -1,10 +1,8 @@
 import calendar as c
 
-"# Вводим год"
+# Вводим год и месяц
 year = int(input("Year: "))
+month = int(input("Month: "))
 
-"# Создаем календарь"
-calendar = c.prcal(year)
-
-"# Выводим календарь"
-print(calendar)
+# Выводим календарь
+print(c.prmonth(year, month))

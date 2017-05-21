@@ -1,8 +1,7 @@
-dict1 = {1: 'one', 2: 'two', 3: 'three',
+dict1 = {2: 'two', 2: 'two', 4: 'four',
          4: 'four', 5: 'five'}
 
-"# Извлекаем значения словаря и форматируем их в строку"
-values = list(dict1.values())
-values = ", ".join(values)
+# Извлекаем уникальные значения словаря
+values = ", ".join(set(dict1.values()))
 
 print(values)
