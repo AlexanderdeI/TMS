@@ -8,9 +8,9 @@ password = input("Password: ")
 errors = []
 
 for i in password:
-	if (len(password) < 16 and
-		len(password) > 6 is False):
-			e = print("Пароль не подходит по размеру")
+	if (len(password) > 16 or
+		len(password) < 6):
+			e = "пароль не подходит по размеру"
 			errors.append(e)
 	if i not in low_lett: 
 		e = 'нет маленьких букв'

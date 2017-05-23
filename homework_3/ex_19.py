@@ -1,20 +1,22 @@
-l = ['abc', 'bcd', 'def', 'lok', 'put', 'throw']
+l = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'as', 'df', 12]
+# Новый список
 new_l = []
-start = 0
-step  = 3
-temp_l = []
+# Задаем количество объединяемых элементов
+n = 3
+# Переменные шага объединения
+step1 = 0
+step2 = n
 
-while len(new_l) < len(l) / step:
-	for el in l:
-		print(el)
-		temp_l.append(el)
-		temp_l = "".join(temp_l)
-		new_l.append(temp_l)
-		start += step
-		step += step
+while len(new_l) < len(l) // n:
+	# Временный список
+    temp_l = []
+    for el in l[step1:step2]:
+        # Добавляем во временный список элементы в диап. шага
+        temp_l.append(str(el))
+    # Объединяем элементы временного списка и добавляем в новый
+    new_l.append("".join(temp_l))
+    # Переходим в следующий интервал
+    step1 += n
+    step2 += n
 
 print(new_l)
-		
-		
-	
-	

@@ -15,6 +15,5 @@ def zip_(*args):
         el_index += 1
     return result
 
-
 for i in zip_("1234", ["one", "two", "three"]):
     print(i)
