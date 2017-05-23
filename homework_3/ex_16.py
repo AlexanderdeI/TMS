@@ -32,6 +32,9 @@ inv_fr = {k: v for k, v in zip(value, key)}
 
 # Получаем ключ наиболее встречаемого слова
 most_fr_word = max(inv_fr.keys())
-# Находим значение по ключу и выводим слово
-most_fr_word = inv_fr[most_fr_word]
-print(f'Наиболее часто встречающееся слово в тексте: "{most_fr_word}"')
+
+# Находим значение по ключу и выводим слово(a)
+for key in inv_fr.keys():
+    if key == most_fr_word:
+        word = inv_fr[key]
+        print(f'Наиболее часто встречающееся слово в тексте: "{word}"')
