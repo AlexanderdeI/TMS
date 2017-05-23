@@ -1,6 +1,7 @@
-num = int(input("Number n: "))
+# Вводим число
+n = int(input("Number n: "))
+a = 1
 
-n = 1
-for n in range(num):
-	n = n + 1
-	print(n)
+for _ in range(2, n):
+    a += _
+    print(a)

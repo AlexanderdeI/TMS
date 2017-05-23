@@ -16,21 +16,18 @@ second_num = float(input("Second number: "))
 operation = int(input("Operation: "))
 
 if operation == 1:
-	exit()
+    exit()
 elif operation == 2:
-	sum_n = first_num + second_num
-	print(f'Result: {sum_n}')
+    sum_n = first_num + second_num
+    print(f'Result: {sum_n}')
 elif operation == 3:
-	sub_n = first_num - second_num
-	print(f'Result: {sub_n}')
+    sub_n = first_num - second_num
+    print(f'Result: {sub_n}')
 elif operation == 4:
-	mult_n = first_num * second_num
-	print(f'Result: {mult_n}')
+    mult_n = first_num * second_num
+    print(f'Result: {mult_n}')
 elif operation == 5:
-	div_n = first_num / second_num
-	print(f'Result: {div_n}')
+    div_n = first_num / second_num
+    print(f'Result: {div_n}')
 else:
-	print('Wrong number of operation')
-	exit()
-
-
+    print('Wrong number of operation')
