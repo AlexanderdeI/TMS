@@ -3,6 +3,7 @@ def min_(arg1, *args):
     if args:
         iterr = list(args)
         iterr.append(arg1)
+
         # Избавляемся от вложенности
         def flatt(iterr):
             result = []
@@ -13,9 +14,11 @@ def min_(arg1, *args):
                     result.append(el)
             return result
         iterable = flatt(iterr)
+
     # Если один объект передаем в переменную по которой итерируемся
     else:
         iterable = arg1
+
     # Определяем максималный объект в iterable
     result = iterable[0]
     for el in iterable:

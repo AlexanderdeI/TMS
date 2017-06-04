@@ -1,8 +1,5 @@
-def remainder_of_division(first_num, second_num):
-    if first_num < second_num or second_num == 0:
-        return False
-    else:
-        result = first_num % second_num
-        return result
+def remainder_of_division(dividend, divider):
+    residue = dividend % divider
+    return residue
 
-print(remainder_of_division(16, 9))
+print(remainder_of_division(1, 9))

@@ -1,14 +1,14 @@
 def factorial(num):
-    while num != 0:
-        fact = 1
-        # Считаем факториал числа
-        for n in range(1, num):
-            fact *= n
-            result = num * fact
-        print(result)
-        # Уменьшаем исходное число и считаем факториал снова
-        num -= 1
+    result = []
+    supl = 1
+    if num == 1:
+        result.append(1)
     else:
-        exit()
+        for n in range(1, num):
+            supl *= n
+        result.append(num * supl)
+    if num > 0:
+        result.extend(factorial(num - 1))
+    return result
 
-print(factorial(50))
+print(factorial(10))
