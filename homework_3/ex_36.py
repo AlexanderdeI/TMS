@@ -1,34 +1,65 @@
-import random as r
+import random
+import time
+import os
 
-list_of_words = ['питон', 'цикл', 'функция', 'модуль',
-				'словарь', 'исключение', 'список', 'строка']
-word = r.choice(list_of_words)
-len_word = len(word)
-print(f'В слове {len_word} букв.')
-word_g = (" _ " * len_word).split()
-print(" ".join(word_g))
-life = 9
+words = ["питон", "цикл", "исключение", "функция", "список"]
 
-while life > 0:
-    alph = list('абвгдеёжзийклмнопрстуфхцчшщъыьэюя')
-    letter = input("Ваша буква: ")
-    # Отгаданные буквы будем заменять на 0
-    if (letter in alph and
-        letter in word):
-            index = (word.index(letter)) + 1
-            print(f"Данная буква {index} в слове.")
-            word_g[index - 1] = letter.upper()
-            print(" ".join(word_g))
+lives = 9
+word = list(random.choice(words))
+alph = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
+game_word = list(("_" * len(word)))
+tried_letters = []
+
+
+def clear_display():
+    time.sleep(1)
+    os.system('cls')
+
+
+def statistics_message():
+    print("В слове {0} букв".format(len(word)))
+    print("У вас {0} жизней.".format(lives))
+    print(" ".join(game_word), end=2 * '\n')
+
+
+while lives > 0:
+    statistics_message()
+    letter = (input("Ваша буква: ")).lower()
+
+    if letter not in alph:
+        print("Неправильный ввод")
+        clear_display()
+        continue
+
+    elif letter in tried_letters:
+        if letter.upper() not in word:
+            print('Вы уже пробовали эту букву. Её нет в слове')
+            clear_display()
+            continue
+        print('Вы уже отгадали эту букву')
+        clear_display()
+        continue
+
+    elif letter in alph and letter in word:
+        tried_letters.append(letter)
+        for l in word:
+            if l == letter:
+                index = word.index(l)
+                word[index] = l.upper()
+                game_word.insert(index, l.upper())
+                game_word.pop(index + 1)
+        print('Есть такая буква!!!')
+        clear_display()
+
     else:
-        life -= 1
-        print("Буквы нет в слове")
-        print(f"У вас осталось {life} жизней.")
+        tried_letters.append(letter)
+        lives -= 1
+        print("Такой буквы нет", end='\r')
+        clear_display()
 
-    if life > 0 and ("".join(word_g)).count('_') == 0:
+    if lives > 0 and "".join(game_word).count('_') == 0:
         print("Вы победили!!!")
-        final_word = "".join(word_g)
-        print(f'Загаданное слово: {final_word}')
+        print("Загаданное слово: " + " ".join(game_word))
         exit()
 
-print("Вы проиграли.")
-
+print('Вы проиграли :(')
