@@ -1,0 +1,9 @@
+----i----
+--b---b--
+--b---b--
+--bbbbb--
+-bbbbbbb-
+bbbbbbbbb
+--bbbbb--
+--bbbbb-
+ii-----ii

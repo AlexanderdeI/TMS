@@ -1,0 +1,9 @@
+----b----    
+---bbb---   
+--bbbbb--  
+-bbbbbbb-
+-bbbbbbb-
+-bbbbbbb-
+-b-b-b-b-
+-bbb-bbb-
+bbbbbbbbb
