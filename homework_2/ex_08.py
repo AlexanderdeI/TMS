@@ -17,7 +17,7 @@ dict_month = {'january': 1, 'february': 2, 'march': 3,
               'october': 10, 'november': 11, 'december': 12}
 
 # Присваиваем номер, если строка в словаре
-if (month.isalpha and month in dict_month):
+if month.isalpha and month in dict_month:
     month = dict_month[month]
 
 # Определяем количество дней
