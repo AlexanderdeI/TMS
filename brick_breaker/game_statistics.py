@@ -12,7 +12,8 @@ class GameStatistics():
         self.reset_statistics()
         self.score = 0
         # Файл рекордов
-        self.record_file = open(os.getcwd() + r"/records/records.txt", "r+")
+        self.record_file = open(os.path.join(os.getcwd(), "records",
+                                             "records.txt"), "r+")
         score_list = self.record_file.read().split("\n")
         self.high_score = max([int(n) for n in score_list])
 

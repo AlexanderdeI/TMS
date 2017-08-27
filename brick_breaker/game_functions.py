@@ -98,13 +98,14 @@ def check_mouse_event(event, statistics, sb, improvments, play_button,
             bat.center = screen_rect.width - 0.5 * bat.lenght
     # Действия левой кнопки мышки
     elif event.type == pygame.MOUSEBUTTONDOWN:
-        run_ball(screen, bat, balls)
         mousex, mousey = pygame.mouse.get_pos()
         if not statistics.game_active:
             check_play_button(statistics, sb, improvments, play_button, mousex,
                               mousey, screen, bat, balls,
                               bricks, iron_bricks, levels)
             check_exit_button(exit_button, mousex, mousey, statistics, sb)
+        elif statistics.game_active:
+            run_ball(screen, bat, balls)
         elif statistics.K_ESCAPE_active:
             check_continue_button(statistics, continue_button, mousex, mousey)
             check_exit_button(exit_button, mousex, mousey, statistics, sb)

@@ -2,6 +2,9 @@ import pygame
 import os
 
 
+IMAGES_PATH = os.path.join(os.getcwd(), "images")
+
+
 class SetScreen():
     # Параметры экрана
     def __init__(self):
@@ -16,7 +19,7 @@ class SetScreen():
 class SetBat():
     # Параметры ракетки
     def __init__(self):
-        self.IMAGE = pygame.image.load(os.getcwd() + r'/images/bat.png')
+        self.IMAGE = pygame.image.load(os.path.join(IMAGES_PATH, "bat.png"))
         self.SPEED = 8
         self.COEF_LR = 0.4
         self.COEF_CENTR = 0.1
@@ -26,7 +29,7 @@ class SetBat():
 class SetBall():
     # Параметры шара
     def __init__(self):
-        self.IMAGE = pygame.image.load(os.getcwd() + r'/images/ball.png')
+        self.IMAGE = pygame.image.load(os.path.join(IMAGES_PATH, "ball.png"))
         self.SPEED = 2.5
         self.LIFES = 3
         self.BALLS_COUNT = 0
@@ -35,16 +38,17 @@ class SetBall():
 class SetBrick():
     # Параметры кирпичей
     def __init__(self):
-        self.IMAGE = pygame.image.load(os.getcwd() + r'/images/brick.png')
-        self.IRON_BRICK_IMAGE = pygame.image.load(os.getcwd() +
-                                                  r'/images/iron_brick.png')
+        self.IMAGE = pygame.image.load(os.path.join(IMAGES_PATH, "brick.png"))
+        self.IRON_BRICK_IMAGE = pygame.image.load(
+                                os.path.join(IMAGES_PATH, "iron_brick.png"))
         self.COST = 50
 
 
 class SetImprovmets():
     # Параметры улучшений
     def __init__(self):
-        self.LIFE = pygame.image.load(os.getcwd() + r'/images/life.png')
-        self.EXTRA_BALL = pygame.image.load(os.getcwd() + r'/images/ball.png')
-        self.DEATH = pygame.image.load(os.getcwd() + r'/images/death.png')
+        self.LIFE = pygame.image.load(os.path.join(IMAGES_PATH, "life.png"))
+        self.EXTRA_BALL = pygame.image.load(
+                          os.path.join(IMAGES_PATH, "ball.png"))
+        self.DEATH = pygame.image.load(os.path.join(IMAGES_PATH, "death.png"))
         self.FALL_RATE = 2

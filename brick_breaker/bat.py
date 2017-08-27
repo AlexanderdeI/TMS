@@ -1,4 +1,3 @@
-import unittest
 from settings import SetBat
 
 conf_bat = SetBat()
